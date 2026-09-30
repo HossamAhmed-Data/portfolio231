@@ -11,19 +11,19 @@
     .container{ width:min(1100px, 90%); margin:auto; }
     
     /* Header / Sidebar */
-    header{ position:fixed; left:0; top:0; width:260px; height:100vh; background:#111827; padding:40px 20px; border-right:1px solid #1f2937; z-index:100; overflow-y:auto; }
-    .profile-img{ text-align:center; margin-bottom:15px; }
-    .profile-img img{ width:110px; height:110px; border-radius:50%; object-fit:cover; border:3px solid #38bdf8; }
-    h1.sitename{ font-size:20px; text-align:center; color:#fff; margin-bottom:15px; }
+    header{ position:fixed; left:0; top:0; width:260px; height:100vh; background:#111827; padding:30px 20px; border-right:1px solid #1f2937; z-index:100; overflow-y:auto; }
+    .profile-img{ text-align:center; margin-bottom:12px; }
+    .profile-img img{ width:100px; height:100px; border-radius:50%; object-fit:cover; border:3px solid #38bdf8; }
+    h1.sitename{ font-size:18px; text-align:center; color:#fff; margin-bottom:12px; }
     
-    /* Social Links (Round Buttons) */
-    .social-links{ display:flex; justify-content:center; gap:8px; margin-bottom:30px; }
-    .social-links a{ width:36px; height:36px; background:#1f2937; color:#38bdf8; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-weight:bold; font-size:12px; transition:0.3s; border:1px solid #374151; }
+    /* Social Links (Moved above Home) */
+    .social-links{ display:flex; justify-content:center; gap:8px; margin-bottom:20px; }
+    .social-links a{ width:34px; height:34px; background:#1f2937; color:#38bdf8; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-weight:bold; font-size:11px; transition:0.3s; border:1px solid #374151; }
     .social-links a:hover{ background:#38bdf8; color:#111827; }
 
     .navmenu ul{ list-style:none; }
-    .navmenu li{ margin-bottom:10px; }
-    .navmenu a{ display:block; color:#9ca3af; text-decoration:none; padding:10px 15px; border-radius:8px; transition:0.3s; font-size:14px; }
+    .navmenu li{ margin-bottom:8px; }
+    .navmenu a{ display:block; color:#9ca3af; text-decoration:none; padding:9px 14px; border-radius:8px; transition:0.3s; font-size:13px; }
     .navmenu a:hover, .navmenu a.active{ background:#1f2937; color:#38bdf8; }
 
     /* Main Content */
@@ -46,7 +46,14 @@
     .stat-box h3{ font-size:36px; color:#38bdf8; margin-bottom:5px; }
     .stat-box p{ color:#9ca3af; font-size:13px; }
 
-    /* Projects / Portfolio */
+    /* Skills Section Styles */
+    .skills-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
+    .skill-card{ background:#111827; padding:20px; border-radius:12px; border:1px solid #1f2937; }
+    .skill-header{ display:flex; justify-content:space-between; margin-bottom:8px; color:#fff; font-size:14px; font-weight:600; }
+    .skill-bar{ width:100%; height:8px; background:#1f2937; border-radius:4px; overflow:hidden; }
+    .skill-progress{ height:100%; background:#38bdf8; border-radius:4px; }
+
+    /* Projects / Portfolio (3 Projects Only) */
     .portfolio-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:25px; }
     .portfolio-item{ background:#111827; border-radius:12px; overflow:hidden; border:1px solid #1f2937; }
     .portfolio-item img{ width:100%; height:180px; object-fit:cover; display:block; cursor:pointer; }
@@ -71,7 +78,7 @@
     @media(max-width:900px){
       header{ width:100%; height:auto; position:relative; }
       main{ margin-left:0; padding:20px; }
-      .stats-grid, .portfolio-grid, .cert-grid{ grid-template-columns:1fr; }
+      .stats-grid, .portfolio-grid, .cert-grid, .skills-grid{ grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -83,7 +90,7 @@
     </div>
     <h1 class="sitename">Hosam Ahmed</h1>
     
-    <!-- Social Links (GitHub, LinkedIn, WhatsApp) -->
+    <!-- Social Links (Moved above Home) -->
     <div class="social-links">
       <a href="https://github.com/hossamahmed-data" target="_blank" title="GitHub">GH</a>
       <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7" target="_blank" title="LinkedIn">IN</a>
@@ -94,8 +101,9 @@
       <ul>
         <li><a href="#hero" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#stats">Stats</a></li>
-        <li><a href="#portfolio">Portfolio (5)</a></li>
+        <li><a href="#portfolio">Portfolio (3)</a></li>
         <li><a href="#resume">Certifications (5)</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -122,12 +130,39 @@
       </div>
     </section>
 
+    <!-- Skills Section Added nicely -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-desc">Core analytical tools and competencies used for data modeling and reporting.</p>
+        
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-header"><span>Power BI & DAX</span><span>95%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header"><span>Excel & Power Query</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header"><span>SQL & Database Management</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header"><span>Data Modeling & Star Schema</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Stats -->
     <section id="stats">
       <div class="container">
         <div class="stats-grid">
           <div class="stat-box">
-            <h3>5</h3>
+            <h3>3</h3>
             <p>Data Projects</p>
           </div>
           <div class="stat-box">
@@ -146,10 +181,10 @@
       </div>
     </section>
 
-    <!-- Portfolio (5 Projects) -->
+    <!-- Portfolio (3 Projects Only) -->
     <section id="portfolio">
       <div class="container">
-        <h2 class="section-title">Portfolio (5 Projects)</h2>
+        <h2 class="section-title">Portfolio (3 Projects)</h2>
         <p class="section-desc">Click the button below each project to reveal the problem solved and client value.</p>
         
         <div class="portfolio-grid">
@@ -191,34 +226,6 @@
               <div id="c3" class="case-details-box">
                 <p><strong>Problem:</strong> Unpredictable transit times causing customer dissatisfaction.</p>
                 <p style="margin-top:5px;"><strong>Client Value:</strong> Optimized carrier allocation and reduced fulfillment cycle times.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="portfolio-item">
-            <img src="assets/img/project1.jpg.jpeg" alt="Project 4">
-            <div class="portfolio-info">
-              <h4>Regional Sales Performance</h4>
-              <p>Territory expansion and geographic market report.</p>
-              <button class="toggle-case-btn" onclick="toggleCase('c4')">🔍 View Solution & Value</button>
-              <div id="c4" class="case-details-box">
-                <p><strong>Problem:</strong> Lack of visibility into regional revenue distributions.</p>
-                <p style="margin-top:5px;"><strong>Client Value:</strong> Guided leadership in redirecting resources to growth sectors.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="portfolio-item">
-            <img src="assets/img/project2.jpg.jpeg" alt="Project 5">
-            <div class="portfolio-info">
-              <h4>Financial Analytics</h4>
-              <p>Budget allocation and expense tracking advanced model.</p>
-              <button class="toggle-case-btn" onclick="toggleCase('c5')">🔍 View Solution & Value</button>
-              <div id="c5" class="case-details-box">
-                <p><strong>Problem:</strong> Inefficient expense tracking leading to budget overruns.</p>
-                <p style="margin-top:5px;"><strong>Client Value:</strong> Provided real-time tracking to secure absolute cost efficiency.</p>
               </div>
             </div>
           </div>
