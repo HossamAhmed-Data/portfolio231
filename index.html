@@ -45,14 +45,13 @@
     h2.section-title{ font-size:32px; color:#fff; margin-bottom:10px; font-weight: 700; position: relative; }
     p.section-desc{ color:#9ca3af; margin-bottom:40px; font-size: 15px; }
 
-    /* Advanced Sequential Slide-In Animations (خبطة وراء خبطة ومن الجانب) */
+    /* Advanced Sequential Slide-In Animations */
     .skills-grid > *, .stats-grid > *, .portfolio-grid > *, .cert-grid > * {
       opacity: 0;
       transform: translateX(-70px) scale(0.9);
       transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Alternate coming directions for a stunning UI/UX effect */
     .skills-grid > *:nth-child(even),
     .stats-grid > *:nth-child(even),
     .portfolio-grid > *:nth-child(even),
@@ -68,7 +67,6 @@
       transform: translateX(0) scale(1);
     }
 
-    /* Staggered Delay for sequential dropping (خبط خبط خبط) */
     section.visible .skills-grid > *:nth-child(1),
     section.visible .stats-grid > *:nth-child(1),
     section.visible .portfolio-grid > *:nth-child(1),
@@ -110,11 +108,11 @@
     .skill-bar{ width:100%; height:8px; background:#1f2937; border-radius:4px; overflow:hidden; }
     .skill-progress{ height:100%; background:#38bdf8; border-radius:4px; width:0; transition: width 1.5s ease-in-out; box-shadow: 0 0 10px #38bdf8; }
 
-    /* Portfolio (3 Projects) with Glow Hover */
+    /* Portfolio (3 Projects) with Glow Hover & Zoom Cursor */
     .portfolio-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:25px; }
     .portfolio-item{ background:#111827; border-radius:12px; overflow:hidden; border:1px solid #1f2937; transition: all 0.4s ease; }
     .portfolio-item:hover{ transform: translateY(-8px); border-color:#38bdf8; box-shadow: 0 0 30px rgba(56, 189, 248, 0.4); background: linear-gradient(145deg, #111827, #162238); }
-    .portfolio-item img{ width:100%; height:180px; object-fit:cover; display:block; cursor:pointer; transition: transform 0.5s; }
+    .portfolio-item img{ width:100%; height:180px; object-fit:cover; display:block; cursor:zoom-in; transition: transform 0.5s; }
     .portfolio-item:hover img{ transform: scale(1.06); }
     .portfolio-info{ padding:20px; }
     .portfolio-info h4{ font-size:18px; color:#fff; margin-bottom:8px; }
@@ -123,6 +121,13 @@
     .toggle-case-btn:hover{ background:#0ea5e9; box-shadow: 0 0 10px #38bdf8; }
     .case-details-box{ display:none; margin-top:12px; background:#1f2937; padding:12px; border-radius:6px; font-size:12px; color:#e5e7eb; }
     .case-details-box.active{ display:block; }
+
+    /* Lightbox Modal for Fullscreen Image */
+    #lightbox-modal { display:none; position:fixed; inset:0; background:rgba(7, 10, 19, 0.92); z-index:999; justify-content:center; align-items:center; padding:20px; backdrop-filter: blur(5px); }
+    #lightbox-modal.active { display:flex; }
+    #lightbox-modal img { max-width:90%; max-height:85vh; border-radius:10px; border:2px solid #38bdf8; box-shadow: 0 0 40px rgba(56, 189, 248, 0.5); object-fit: contain; }
+    .close-lightbox { position:absolute; top:25px; right:35px; color:#fff; font-size:35px; cursor:pointer; transition:0.3s; }
+    .close-lightbox:hover { color:#38bdf8; transform: scale(1.1); }
 
     /* Certifications with Glow Hover */
     .cert-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
@@ -146,6 +151,12 @@
   </style>
 </head>
 <body>
+
+  <!-- Lightbox Modal for Fullscreen Dashboard Images -->
+  <div id="lightbox-modal" onclick="closeLightbox()">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightbox-img" src="" alt="Fullscreen Dashboard">
+  </div>
 
   <header>
     <div class="profile-img">
@@ -244,16 +255,16 @@
       </div>
     </section>
 
-    <!-- Portfolio (3 Projects) -->
+    <!-- Portfolio (3 Projects with Fullscreen Image Click) -->
     <section id="portfolio">
       <div class="container">
         <h2 class="section-title">Portfolio (3 Projects)</h2>
-        <p class="section-desc">Click the button below each project to reveal the problem solved and client value.</p>
+        <p class="section-desc">Click on any dashboard image to view it in full screen.</p>
         
         <div class="portfolio-grid">
           <!-- Project 1 -->
           <div class="portfolio-item">
-            <img src="assets/img/project1.jpg.jpeg" alt="Project 1">
+            <img src="assets/img/project1.jpg.jpeg" alt="Superstore Sales Dashboard" onclick="openLightbox(this.src)">
             <div class="portfolio-info">
               <h4>Superstore Sales Dashboard</h4>
               <p>Power BI report utilizing Star Schema and DAX measures.</p>
@@ -267,7 +278,7 @@
 
           <!-- Project 2 -->
           <div class="portfolio-item">
-            <img src="assets/img/project2.jpg.jpeg" alt="Project 2">
+            <img src="assets/img/project2.jpg.jpeg" alt="HR Attrition Intelligence" onclick="openLightbox(this.src)">
             <div class="portfolio-info">
               <h4>HR Attrition Intelligence</h4>
               <p>Workforce analytics dashboard monitoring turnover rates.</p>
@@ -281,7 +292,7 @@
 
           <!-- Project 3 -->
           <div class="portfolio-item">
-            <img src="assets/img/project3.jpg.jpeg" alt="Project 3">
+            <img src="assets/img/project3.jpg.jpeg" alt="Supply Chain Logistics" onclick="openLightbox(this.src)">
             <div class="portfolio-info">
               <h4>Supply Chain Logistics</h4>
               <p>Operations dashboard tracking lead times and shipping delays.</p>
@@ -346,6 +357,19 @@
       if (box) {
         box.classList.toggle('active');
       }
+    }
+
+    // Lightbox Modal Functions
+    function openLightbox(imgSrc) {
+      const modal = document.getElementById('lightbox-modal');
+      const modalImg = document.getElementById('lightbox-img');
+      modalImg.src = imgSrc;
+      modal.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.remove('active');
     }
 
     // Scroll Animations, Counters & Skill Bars Observer
