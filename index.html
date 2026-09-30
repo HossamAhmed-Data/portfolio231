@@ -104,10 +104,16 @@
     .certificate p{ color:#6b7585; font-size:14px; margin-top:12px; }
 
     /* ================= CONTACT ================= */
-    .contact-box{ max-width:750px; margin:auto; background:#101827; color:white; border-radius:15px; padding:45px; text-align:center; }
-    .contact-box h2{ font-family:"Poppins",sans-serif; font-size:30px; margin-bottom:10px; color:white; }
-    .contact-box p{ color:#aeb8c7; margin-bottom:25px; }
-    .contact-links{ display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+    .contact-box{ max-width:850px; margin:auto; background:#101827; color:white; border-radius:16px; padding:50px; text-align:center; box-shadow:0 15px 35px rgba(16,24,39,.15); }
+    .contact-box h2{ font-family:"Poppins",sans-serif; font-size:32px; margin-bottom:12px; color:white; }
+    .contact-box p{ color:#aeb8c7; margin-bottom:30px; font-size:16px; max-width:600px; margin-left:auto; margin-right:auto; }
+    .contact-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; text-align:left; max-width:650px; margin:0 auto 30px; }
+    .contact-item{ background:#1b2638; padding:18px 22px; border-radius:10px; display:flex; align-items:center; gap:15px; border:1px solid rgba(255,255,255,.06); transition:.3s; }
+    .contact-item:hover{ border-color:#16a6b6; transform:translateY(-2px); }
+    .contact-icon{ font-size:22px; color:#16a6b6; width:35px; text-align:center; }
+    .contact-info span{ display:block; font-size:12px; color:#9da8b8; text-transform:uppercase; letter-spacing:1px; }
+    .contact-info strong{ font-size:14px; color:white; word-break:break-all; }
+    .contact-actions{ display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
 
     /* ================= FOOTER ================= */
     footer{ margin-left:260px; background:#0d1420; color:#8e99aa; text-align:center; padding:25px; font-size:13px; }
@@ -125,6 +131,7 @@
       .dashboard{ position:static; }
       .skills-grid{ grid-template-columns:1fr 1fr; }
       .certificates{ grid-template-columns:1fr; }
+      .contact-grid{ grid-template-columns:1fr; }
     }
     @media(max-width:600px){
       section{ padding:70px 0; }
@@ -267,6 +274,7 @@
           <p>Each project explains the complete analytical process — from the business problem to the final insights and business impact.</p>
         </div>
 
+        <!-- ================= PROJECT 1 ================= -->
         <div class="project">
           <div class="project-top">
             <h3>Superstore Sales & Profitability Analysis</h3>
@@ -329,30 +337,4 @@
                 <h4>11. My Role</h4>
                 <div class="process">
                   <span>Data Cleaning</span>
-                  <span>Data Transformation</span>
-                  <span>Data Modeling</span>
-                  <span>DAX</span>
-                  <span>Dashboard Development</span>
-                  <span>Data Analysis</span>
-                  <span>Insights</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= CERTIFICATES ================= -->
-    <section id="certificates">
-      <div class="container">
-        <div class="section-title">
-          <span>Credentials</span>
-          <h2>Certificates & Training</h2>
-          <p>Training and certifications related to data analysis and professional development.</p>
-        </div>
-        <div class="certificates">
-          <div class="certificate">
-            <h3>Data Fundamentals Digital Badge</h3>
-            <div class="issuer">IBM SkillsBuild</div>
+                  <span>Data Trans
