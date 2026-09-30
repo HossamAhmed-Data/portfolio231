@@ -1,369 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hossam Ahmed | Junior Data Analyst</title>
-  <meta content="Hossam Ahmed - Junior Data Analyst Portfolio" name="description">
-  <meta content="Data Analyst, Power BI, Excel, SQL, DAX" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    .case-details-box { display: none; margin-top: 10px; background: #f8f9fa; padding: 12px; border-radius: 6px; border-left: 4px solid #149ddd; text-align: left; }
-    .case-details-box.active { display: block; }
-    .toggle-case-btn { background: #149ddd; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; margin-top: 8px; cursor: pointer; font-weight: 600; }
-    .toggle-case-btn:hover { background: #0f7bb0; }
+    *{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+    body{ background:#0b0f19; color:#f3f4f6; line-height:1.6; }
+    .container{ width:min(1100px, 90%); margin:auto; }
+    
+    /* Header / Sidebar */
+    header{ position:fixed; left:0; top:0; width:260px; height:100vh; background:#111827; padding:40px 20px; border-right:1px solid #1f2937; z-index:100; overflow-y:auto; }
+    .profile-img{ text-align:center; margin-bottom:20px; }
+    .profile-img img{ width:110px; height:110px; border-radius:50%; object-fit:cover; border:3px solid #38bdf8; }
+    h1.sitename{ font-size:20px; text-align:center; color:#fff; margin-bottom:20px; }
+    .social-links{ text-align:center; margin-bottom:30px; }
+    .social-links a{ display:inline-block; width:35px; height:35px; background:#1f2937; color:#38bdf8; border-radius:50%; line-height:35px; margin:0 4px; text-decoration:none; font-weight:bold; }
+    .navmenu ul{ list-style:none; }
+    .navmenu li{ margin-bottom:10px; }
+    .navmenu a{ display:block; color:#9ca3af; text-decoration:none; padding:10px 15px; border-radius:8px; transition:0.3s; font-size:14px; }
+    .navmenu a:hover, .navmenu a.active{ background:#1f2937; color:#38bdf8; }
+
+    /* Main Content */
+    main{ margin-left:260px; padding:50px; }
+    section{ padding:60px 0; border-bottom:1px solid #1f2937; }
+    h2.section-title{ font-size:32px; color:#fff; margin-bottom:15px; }
+    p.section-desc{ color:#9ca3af; margin-bottom:40px; }
+
+    /* Hero */
+    .hero{ min-height:80vh; display:flex; flex-direction:column; justify-content:center; }
+    .hero h2{ font-size:48px; color:#fff; margin-bottom:10px; }
+    .hero p{ font-size:20px; color:#38bdf8; }
+
+    /* Stats */
+    .stats-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; }
+    .stat-box{ background:#111827; padding:25px; border-radius:12px; border:1px solid #1f2937; text-align:center; }
+    .stat-box h3{ font-size:36px; color:#38bdf8; margin-bottom:5px; }
+    .stat-box p{ color:#9ca3af; font-size:13px; }
+
+    /* Projects / Portfolio */
+    .portfolio-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:25px; }
+    .portfolio-item{ background:#111827; border-radius:12px; overflow:hidden; border:1px solid #1f2937; }
+    .portfolio-item img{ width:100%; height:180px; object-fit:cover; display:block; cursor:pointer; }
+    .portfolio-info{ padding:20px; }
+    .portfolio-info h4{ font-size:18px; color:#fff; margin-bottom:8px; }
+    .portfolio-info p{ color:#9ca3af; font-size:13px; margin-bottom:15px; }
+    .toggle-case-btn{ background:#38bdf8; color:#0b0f19; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:12px; width:100%; }
+    .case-details-box{ display:none; margin-top:12px; background:#1f2937; padding:12px; border-radius:6px; font-size:12px; color:#e5e7eb; }
+    .case-details-box.active{ display:block; }
+
+    /* Certifications */
+    .cert-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
+    .cert-card{ background:#111827; padding:20px; border-radius:12px; border:1px solid #1f2937; }
+    .cert-card h4{ color:#fff; font-size:16px; margin-bottom:5px; }
+    .cert-card span{ color:#38bdf8; font-size:12px; }
+
+    /* Contact */
+    .contact-box{ background:#111827; padding:40px; border-radius:12px; border:1px solid #1f2937; text-align:center; }
+    .urgent-banner{ background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; padding:15px; border-radius:8px; margin-bottom:25px; font-weight:600; }
+    .btn-whatsapp{ display:inline-block; background:#22c55e; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top:15px; }
+
+    @media(max-width:900px){
+      header{ width:100%; height:auto; position:relative; }
+      main{ margin-left:0; padding:20px; }
+      .stats-grid, .portfolio-grid, .cert-grid{ grid-template-columns:1fr; }
+    }
   </style>
 </head>
+<body>
 
-<body class="index-page">
-
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
+  <header>
     <div class="profile-img">
-      <img src="assets/img/hossam.jpg.jpeg" alt="" class="img-fluid rounded-circle">
+      <img src="assets/img/hossam.jpg.jpeg" alt="Hossam Ahmed">
     </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">Hosam Ahmed</h1>
-    </a>
-
-    <div class="social-links text-center">
-      <a href="https://github.com/hossamahmed-data" target="_blank" class="github" title="GitHub"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7" target="_blank" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      <a href="https://wa.me/201099371851" target="_blank" class="whatsapp" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <h1 class="sitename">Hosam Ahmed</h1>
+    <div class="social-links">
+      <a href="https://github.com/hossamahmed-data" target="_blank">GH</a>
+      <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7" target="_blank">IN</a>
+      <a href="https://wa.me/201099371851" target="_blank">WA</a>
     </div>
-
-    <nav id="navmenu" class="navmenu">
+    <nav class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#portfolio">Portfolio (5)</a></li>
+        <li><a href="#resume">Certifications (5)</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-bg.jpeg.jpeg" alt="" data-aos="fade-in">
-      <div class="container" data-aos="fade-in" data-aos-delay="100">
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="container">
         <h2>Hossam Ahmed</h2>
-        <p>I'm a <span class="typed" data-typed-items="Data Analyst, Power BI Developer">Data Analyst</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p>Junior Data Analyst & Power BI Developer</p>
       </div>
-    </section><!-- /Hero Section -->
+    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Passionate Data Analyst dedicated to transforming complex datasets into clear, actionable business insights using modern analytical tools.</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-12 content">
-            <h2>Data Analyst &amp; Business Intelligence Developer</h2>
-            <p class="fst-italic py-3">
-              Specialized in building interactive dashboards, cleaning data, and creating robust data models to drive data-driven decision-making.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>Tanta, Gharbia, Egypt</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Tools:</strong> <span>Power BI, Excel, SQL, DAX</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Status:</strong> <span>Open to Opportunities</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /About Section -->
-
-    <!-- Stats Section (Updated: 5 Projects, 5 Certifications, 180 Hours, 5 Core Skills) -->
-    <section id="stats" class="stats section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Data Projects</strong> <span>Power BI & Dashboards</span></p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Certifications</strong> <span>Verified Credentials</span></p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="180" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Training Hours</strong> <span>DEPI & Programs</span></p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-tools"></i>
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Core Tech</strong> <span>Power BI, Excel, SQL, DAX, Oracle</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Stats Section -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Core technical competencies and analytical tools used to transform raw data into powerful business insights.</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row skills-content skills-animation">
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill"><span>Power BI &amp; DAX</span> <val>95%</val></span>
-              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div></div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>Microsoft Excel &amp; Power Query</span> <val>90%</val></span>
-              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>SQL &amp; Database Management</span> <val>85%</val></span>
-              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill"><span>Data Modeling &amp; Star Schema</span> <val>85%</val></span>
-              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>Data Cleaning &amp; Transformation</span> <val>90%</val></span>
-              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>HTML &amp; Portfolio Maintenance</span> <val>80%</val></span>
-              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Skills Section -->
-
-    <!-- Resume Section (Education Removed & Certifications Summarized) -->
-    <section id="resume" class="resume section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>Professional summary and specialized certifications in Data Analysis and Business Intelligence.</p>
-      </div>
-
+    <!-- About -->
+    <section id="about">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Hossam Ahmed Shehata</h4>
-              <p><em>Passionate Junior Data Analyst &amp; BI Developer with hands-on experience in transforming raw data into actionable insights using Power BI, Excel, SQL, and DAX.</em></p>
-              <ul>
-                <li>Tanta, Gharbia, Egypt</li>
-              </ul>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-desc">Passionate Data Analyst dedicated to transforming complex datasets into clear, actionable business insights.</p>
+        <p style="color:#9ca3af;">Location: <strong>Tanta, Gharbia, Egypt</strong> | Status: <strong>Available for Freelance</strong></p>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-box">
+            <h3>5</h3>
+            <p>Data Projects</p>
+          </div>
+          <div class="stat-box">
+            <h3>5</h3>
+            <p>Certifications</p>
+          </div>
+          <div class="stat-box">
+            <h3>180</h3>
+            <p>Training Hours</p>
+          </div>
+          <div class="stat-box">
+            <h3>5</h3>
+            <p>Core Technologies</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio (5 Projects) -->
+    <section id="portfolio">
+      <div class="container">
+        <h2 class="section-title">Portfolio (5 Projects)</h2>
+        <p class="section-desc">Click the button below each project to reveal the problem solved and client value.</p>
+        
+        <div class="portfolio-grid">
+          <!-- Project 1 -->
+          <div class="portfolio-item">
+            <img src="assets/img/project1.jpg.jpeg" alt="Project 1">
+            <div class="portfolio-info">
+              <h4>Superstore Sales Dashboard</h4>
+              <p>Power BI report utilizing Star Schema and DAX measures.</p>
+              <button class="toggle-case-btn" onclick="toggleCase('c1')">🔍 View Solution & Value</button>
+              <div id="c1" class="case-details-box">
+                <p><strong>Problem:</strong> Strong top-line sales masked hidden profit-drainers and discounts.</p>
+                <p style="margin-top:5px;"><strong>Client Value:</strong> Gained visibility to reallocate marketing budgets and focus on high-margin products.</p>
+              </div>
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Certifications (5 Total)</h3>
-            <div class="resume-item">
-              <h4>1. Data Fundamentals Digital Badge</h4>
-              <h5>IBM SkillsBuild (via Credly)</h5>
-              <p><em>August 2026</em></p>
+          <!-- Project 2 -->
+          <div class="portfolio-item">
+            <img src="assets/img/project2.jpg.jpeg" alt="Project 2">
+            <div class="portfolio-info">
+              <h4>HR Attrition Intelligence</h4>
+              <p>Workforce analytics dashboard monitoring turnover rates.</p>
+              <button class="toggle-case-btn" onclick="toggleCase('c2')">🔍 View Solution & Value</button>
+              <div id="c2" class="case-details-box">
+                <p><strong>Problem:</strong> Uncovered unexpected resignation spikes in technical departments.</p>
+                <p style="margin-top:5px;"><strong>Client Value:</strong> Equipped management with retention and promotion strategies.</p>
+              </div>
             </div>
-            <div class="resume-item">
-              <h4>2. Oracle Database &amp; SQL Foundations</h4>
-              <h5>Oracle Certified</h5>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="portfolio-item">
+            <img src="assets/img/project3.jpg.jpeg" alt="Project 3">
+            <div class="portfolio-info">
+              <h4>Supply Chain Logistics</h4>
+              <p>Operations dashboard tracking lead times and shipping delays.</p>
+              <button class="toggle-case-btn" onclick="toggleCase('c3')">🔍 View Solution & Value</button>
+              <div id="c3" class="case-details-box">
+                <p><strong>Problem:</strong> Unpredictable transit times causing customer dissatisfaction.</p>
+                <p style="margin-top:5px;"><strong>Client Value:</strong> Optimized carrier allocation and reduced fulfillment cycle times.</p>
+              </div>
             </div>
-            <div class="resume-item">
-              <h4>3. InnovEgypt &amp; Reloop Project</h4>
-              <h5>Entrepreneurship &amp; Pitch Training</h5>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="portfolio-item">
+            <img src="assets/img/project1.jpg.jpeg" alt="Project 4">
+            <div class="portfolio-info">
+              <h4>Regional Sales Performance</h4>
+              <p>Territory expansion and geographic market report.</p>
+              <button class="toggle-case-btn" onclick="toggleCase('c4')">🔍 View Solution & Value</button>
+              <div id="c4" class="case-details-box">
+                <p><strong>Problem:</strong> Lack of visibility into regional revenue distributions.</p>
+                <p style="margin-top:5px;"><strong>Client Value:</strong> Guided leadership in redirecting resources to growth sectors.</p>
+              </div>
             </div>
-            <div class="resume-item">
-              <h4>4. Data Analysis Training Program</h4>
-              <h5>DEPI Initiative</h5>
-            </div>
-            <div class="resume-item">
-              <h4>5. Advanced Business Analytics</h4>
-              <h5>Professional Track</h5>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="portfolio-item">
+            <img src="assets/img/project2.jpg.jpeg" alt="Project 5">
+            <div class="portfolio-info">
+              <h4>Financial Analytics</h4>
+              <p>Budget allocation and expense tracking advanced model.</p>
+              <button class="toggle-case-btn" onclick="toggleCase('c5')">🔍 View Solution & Value</button>
+              <div id="c5" class="case-details-box">
+                <p><strong>Problem:</strong> Inefficient expense tracking leading to budget overruns.</p>
+                <p style="margin-top:5px;"><strong>Client Value:</strong> Provided real-time tracking to secure absolute cost efficiency.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- /Resume Section -->
+    </section>
 
-    <!-- Portfolio Section (5 Projects with Interactive Problem/Value Reveal) -->
-    <section id="portfolio" class="portfolio section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio (5 Projects)</h2>
-        <p>Explore my featured projects. Click on any dashboard or button to reveal what problem was solved and what value the client gained.</p>
-      </div>
-
+    <!-- Certifications (5 Total) -->
+    <section id="resume">
       <div class="container">
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All Projects</li>
-            <li data-filter=".filter-powerbi">Power BI</li>
-            <li data-filter=".filter-excel">Excel &amp; SQL</li>
-          </ul>
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <!-- Project 1 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-powerbi">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/project1.jpg.jpeg" class="img-fluid" alt="Superstore Dashboard">
-                <div class="portfolio-info">
-                  <h4>Superstore Sales Dashboard</h4>
-                  <p>Comprehensive Power BI report utilizing Star Schema and DAX measures.</p>
-                  <a href="assets/img/project1.jpg.jpeg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <button class="toggle-case-btn" onclick="toggleCase('case1')">🔍 Click to View Solution & Value</button>
-                  <div id="case1" class="case-details-box">
-                    <p><strong>Problem Solved:</strong> Resolved blind spots where strong sales masked hidden profit-drainers and discounts.</p>
-                    <p><strong>Client Value:</strong> Gained clear executive visibility to reallocate marketing budgets and focus on high-margin products.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-powerbi">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/project2.jpg.jpeg" class="img-fluid" alt="HR Attrition Dashboard">
-                <div class="portfolio-info">
-                  <h4>HR Attrition Intelligence</h4>
-                  <p>Workforce analytics dashboard monitoring turnover rates and performance trends.</p>
-                  <a href="assets/img/project2.jpg.jpeg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <button class="toggle-case-btn" onclick="toggleCase('case2')">🔍 Click to View Solution & Value</button>
-                  <div id="case2" class="case-details-box">
-                    <p><strong>Problem Solved:</strong> Uncovered unexpected employee resignation spikes in technical departments.</p>
-                    <p><strong>Client Value:</strong> Equipped management with retention strategies to adjust promotion cycles proactively.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-excel">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/project3.jpg.jpeg" class="img-fluid" alt="Supply Chain Dashboard">
-                <div class="portfolio-info">
-                  <h4>Supply Chain Logistics</h4>
-                  <p>Operations dashboard tracking fulfillment lead times and shipping delays.</p>
-                  <a href="assets/img/project3.jpg.jpeg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <button class="toggle-case-btn" onclick="toggleCase('case3')">🔍 Click to View Solution & Value</button>
-                  <div id="case3" class="case-details-box">
-                    <p><strong>Problem Solved:</strong> Unpredictable transit times causing customer dissatisfaction and penalty costs.</p>
-                    <p><strong>Client Value:</strong> Optimized carrier partner allocation and reduced overall order fulfillment cycle times.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-powerbi">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/project1.jpg.jpeg" class="img-fluid" alt="Regional Sales Dashboard">
-                <div class="portfolio-info">
-                  <h4>Regional Sales Performance</h4>
-                  <p>Territory expansion and geographic market penetration report.</p>
-                  <a href="assets/img/project1.jpg.jpeg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <button class="toggle-case-btn" onclick="toggleCase('case4')">🔍 Click to View Solution & Value</button>
-                  <div id="case4" class="case-details-box">
-                    <p><strong>Problem Solved:</strong> Lack of visibility into regional revenue distributions.</p>
-                    <p><strong>Client Value:</strong> Guided leadership in redirecting sales resources toward high-growth geographical sectors.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-excel">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/project2.jpg.jpeg" class="img-fluid" alt="Financial Analysis Dashboard">
-                <div class="portfolio-info">
-                  <h4>Financial Performance Analytics</h4>
-                  <p>Budget allocation and expense tracking advanced model.</p>
-                  <a href="assets/img/project2.jpg.jpeg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <button class="toggle-case-btn" onclick="toggleCase('case5')">🔍 Click to View Solution & Value</button>
-                  <div id="case5" class="case-details-box">
-                    <p><strong>Problem Solved:</strong> Inefficient expense tracking leading to unexpected budget overruns.</p>
-                    <p><strong>Client Value:</strong> Provided automated real-time financial tracking to secure cost efficiency.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <h2 class="section-title">Professional Certifications (5 Total)</h2>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h4>1. Data Fundamentals Digital Badge</h4>
+            <span>IBM SkillsBuild (Credly) - Aug 2026</span>
+          </div>
+          <div class="cert-card">
+            <h4>2. Oracle Database & SQL Foundations</h4>
+            <span>Oracle Certified Professional</span>
+          </div>
+          <div class="cert-card">
+            <h4>3. InnovEgypt & Reloop Project</h4>
+            <span>Entrepreneurship Training Program</span>
+          </div>
+          <div class="cert-card">
+            <h4>4. Data Analysis Training Program</h4>
+            <span>DEPI Initiative</span>
+          </div>
+          <div class="cert-card">
+            <h4>5. Advanced Business Analytics</h4>
+            <span>Professional Training Track</span>
           </div>
         </div>
       </div>
-    </section><!-- /Portfolio Section -->
+    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Providing professional data solutions to transform raw data into clear, actionable business insights.</p>
-      </div>
-
+    <!-- Contact -->
+    <section id="contact">
       <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart-line"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Power BI Dashboards</a></h4>
-              <p class="description">Building interactive executive dashboards utilizing Star Schema, Power Query, and advanced DAX measures.</p>
-            </div>
+        <div class="contact-box">
+          <div class="urgent-banner">
+            🚀 Want to solve your business problem and start working together right now? Send me a message instantly on WhatsApp!
           </div>
+          <h2 style="color:#fff; margin-bottom:10px;">Let's Work Together</h2>
+          <p style="color:#9ca3af;">Location: Tanta, Gharbia, Egypt</p>
+          <a href="https://wa.me/201099371851" target="_blank" class="btn-whatsapp">Chat on WhatsApp Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-            <div>
-              <h4 class
+  <script>
+    function toggleCase(id) {
+      const box = document.getElementById(id);
+      if (box) {
+        box.classList.toggle('active');
+      }
+    }
+  </script>
+</body>
+</html>
