@@ -4,9 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Hossam Ahmed Shehata | Junior Data Analyst &amp; BI Developer</title>
-  <meta content="Portfolio of Hossam Ahmed Shehata, Junior Data Analyst and Business Intelligence Developer specializing in Power BI, DAX, Power Query, Excel, and SQL." name="description">
-  <meta content="Junior Data Analyst, Business Intelligence, Power BI, DAX, Power Query, SQL, Excel, Star Schema, Hossam Ahmed Shehata" name="keywords">
+
+  <title>Hossam Ahmed | Junior Data Analyst</title>
+
+  <meta name="description"
+    content="Portfolio of Hossam Ahmed, Junior Data Analyst specializing in Excel, Power BI, SQL, Power Query, DAX, data cleaning, analysis, and dashboard development.">
+
+  <meta name="keywords"
+    content="Hossam Ahmed, Data Analyst, Junior Data Analyst, Power BI, Excel, SQL, Power Query, DAX, Data Analysis">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -15,351 +20,866 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
+  <!-- Main CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- Animations & Professional Styling -->
   <style>
-    html { scroll-behavior: smooth; }
-    
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     @keyframes softRise {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .hero .container h2 { animation: softRise .9s ease-out .15s both; }
-    .hero .container p  { animation: softRise .9s ease-out .35s both; }
-    
-    .header .profile-img img { transition: transform .4s ease, box-shadow .4s ease; }
-    .header .profile-img img:hover { transform: scale(1.04); box-shadow: 0 0 0 4px rgba(255, 255, 255, .15); }
-    
-    .header .social-links a { transition: transform .25s ease, background-color .25s ease, color .25s ease; }
-    .header .social-links a:hover { transform: translateY(-3px); }
-    
-    .portfolio .portfolio-content {
-      border-radius: 8px;
-      transition: transform .35s ease, box-shadow .35s ease;
+
+    .hero .container h2 {
+      animation: softRise .9s ease-out .15s both;
     }
-    .portfolio .portfolio-content img { transition: transform .6s ease; }
-    .portfolio .portfolio-content:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, .14);
+
+    .hero .container p {
+      animation: softRise .9s ease-out .35s both;
     }
-    .portfolio .portfolio-content:hover img { transform: scale(1.05); }
-    
-    .services .service-item,
-    .stats .stats-item {
+
+    .header .profile-img img {
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+
+    .header .profile-img img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, .15);
+    }
+
+    .header .social-links a {
+      transition: transform .25s ease, background-color .25s ease;
+    }
+
+    .header .social-links a:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn {
+      transition: all .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Project Card */
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
       transition: transform .3s ease, box-shadow .3s ease;
     }
-    .services .service-item:hover { transform: translateY(-5px); }
-    .stats .stats-item:hover { transform: translateY(-4px); }
-    
-    .btn { transition: color .25s ease, background-color .25s ease, transform .25s ease; }
-    .btn:hover { transform: translateY(-2px); }
-    
-    .skills .progress .progress-bar-wrap .progress-bar { transition: width 1.1s ease; }
-    
-    .case-study-details {
-      background: #f8f9fa;
-      padding: 24px;
-      border-radius: 8px;
-      margin-top: 15px;
-      text-align: left;
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
     }
-    .case-study-details h5 { color: #14919b; font-weight: 700; margin-top: 18px; font-size: 1.1rem; }
-    .case-study-details ul { padding-left: 20px; }
+
+    .project-image {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform .5s ease;
+    }
+
+    .project-image:hover {
+      transform: scale(1.02);
+    }
+
+    /* Case Study */
+
+    .case-study {
+      padding: 25px;
+    }
+
+    .case-study h4 {
+      color: #14919b;
+      font-weight: 700;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    .case-study h4:first-child {
+      margin-top: 0;
+    }
+
+    .case-study p {
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .case-study ul {
+      padding-left: 20px;
+    }
+
+    .case-study li {
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .project-tags span {
+      display: inline-block;
+      background: #eef7f8;
+      color: #14919b;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin: 4px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .project-header {
+      margin-bottom: 25px;
+    }
+
+    .project-header h3 {
+      font-weight: 700;
+    }
+
+    .project-header p {
+      color: #666;
+    }
+
+    .impact-box {
+      background: #f4fafa;
+      border-left: 4px solid #14919b;
+      padding: 18px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    .workflow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .workflow span {
+      background: #f1f1f1;
+      padding: 7px 12px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .section-title p {
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
       }
     }
+
   </style>
+
 </head>
 
 <body class="index-page">
 
+  <!-- ================= HEADER ================= -->
+
   <header id="header" class="header dark-background d-flex flex-column">
+
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="assets/img/hossam.jpg.jpeg" alt="Hossam Ahmed Shehata" class="img-fluid rounded-circle">
+      <img src="assets/img/hossam.jpg.jpeg"
+        alt="Hossam Ahmed"
+        class="img-fluid rounded-circle">
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+    <a href="#hero"
+      class="logo d-flex align-items-center justify-content-center">
       <h1 class="sitename">Hossam Ahmed</h1>
     </a>
 
     <div class="social-links text-center">
-      <a href="https://github.com/hossamahmed-data" target="_blank" rel="noopener" class="github" title="GitHub">
+
+      <a href="https://github.com/hossamahmed-data"
+        target="_blank"
+        rel="noopener"
+        title="GitHub">
         <i class="bi bi-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7" target="_blank" rel="noopener" class="linkedin" title="LinkedIn">
+
+      <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7"
+        target="_blank"
+        rel="noopener"
+        title="LinkedIn">
         <i class="bi bi-linkedin"></i>
       </a>
-      <a href="https://wa.me/201099371851" target="_blank" rel="noopener" class="whatsapp" title="WhatsApp">
+
+      <a href="https://wa.me/201099371851"
+        target="_blank"
+        rel="noopener"
+        title="WhatsApp">
         <i class="bi bi-whatsapp"></i>
       </a>
+
     </div>
 
+    <!-- NAVIGATION -->
+
     <nav id="navmenu" class="navmenu">
+
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About Me</a></li>
-        <li><a href="#skills"><i class="bi bi-bar-chart-steps navicon"></i> Skills</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects ⭐</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Certificates</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+
+        <li>
+          <a href="#hero" class="active">
+            <i class="bi bi-house navicon"></i>
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="#about">
+            <i class="bi bi-person navicon"></i>
+            About Me
+          </a>
+        </li>
+
+        <li>
+          <a href="#skills">
+            <i class="bi bi-bar-chart-steps navicon"></i>
+            Skills
+          </a>
+        </li>
+
+        <li>
+          <a href="#portfolio">
+            <i class="bi bi-kanban navicon"></i>
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="#certificates">
+            <i class="bi bi-award navicon"></i>
+            Certificates
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            <i class="bi bi-envelope navicon"></i>
+            Contact
+          </a>
+        </li>
+
       </ul>
+
     </nav>
+
   </header>
+
 
   <main class="main">
 
-    <!-- 1. Home Section -->
-    <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-bg.jpeg.jpeg" alt="" data-aos="fade-in">
-      <div class="container" data-aos="fade-in" data-aos-delay="100">
+    <!-- ================= HOME ================= -->
+
+    <section id="hero"
+      class="hero section dark-background">
+
+      <img src="assets/img/hero-bg.jpeg.jpeg"
+        alt=""
+        data-aos="fade-in">
+
+      <div class="container"
+        data-aos="fade-in"
+        data-aos-delay="100">
+
         <h2>Hossam Ahmed Shehata</h2>
-        <p>I'm a <span class="typed" data-typed-items="Junior Data Analyst, Business Intelligence Analyst, Power BI Developer">Junior Data Analyst</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-        <p class="mt-2" style="font-size: 1.05rem; opacity: 0.9;">Transforming raw datasets into actionable business intelligence through robust modeling and dashboards.</p>
+
+        <p>
+          I'm a
+          <span class="typed"
+            data-typed-items="Junior Data Analyst, Data Analyst, Power BI Developer">
+            Junior Data Analyst
+          </span>
+          <span class="typed-cursor typed-cursor--blink"></span>
+        </p>
+
+        <p class="mt-2"
+          style="font-size:1.05rem; opacity:.9;">
+
+          Turning raw data into meaningful insights,
+          interactive dashboards, and clear business decisions.
+
+        </p>
+
         <div class="social-links mt-4">
-          <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7" target="_blank" class="btn btn-outline-light btn-sm px-3 py-2 m-1"><i class="bi bi-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/hossamahmed-data" target="_blank" class="btn btn-outline-light btn-sm px-3 py-2 m-1"><i class="bi bi-github"></i> GitHub</a>
-          <a href="#contact" class="btn btn-primary btn-sm px-3 py-2 m-1" style="background-color: #14919b; border: none;"><i class="bi bi-envelope"></i> Contact</a>
-        </div>
-      </div>
-    </section><!-- /Hero Section -->
 
-    <!-- 2. About Me Section -->
+          <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7"
+            target="_blank"
+            class="btn btn-outline-light btn-sm px-3 py-2 m-1">
+
+            <i class="bi bi-linkedin"></i>
+            LinkedIn
+
+          </a>
+
+          <a href="https://github.com/hossamahmed-data"
+            target="_blank"
+            class="btn btn-outline-light btn-sm px-3 py-2 m-1">
+
+            <i class="bi bi-github"></i>
+            GitHub
+
+          </a>
+
+          <a href="#portfolio"
+            class="btn btn-primary btn-sm px-3 py-2 m-1"
+            style="background-color:#14919b;border:none;">
+
+            <i class="bi bi-kanban"></i>
+            View Projects
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
     <section id="about" class="about section">
-      <div class="container section-title" data-aos="fade-up">
+
+      <div class="container section-title"
+        data-aos="fade-up">
+
         <h2>About Me</h2>
-        <p>Turning raw data into clear business value and decision-making clarity.</p>
+
+        <p>
+          A short introduction about my background
+          and approach to data analysis.
+        </p>
+
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-10 content text-center">
+      <div class="container"
+        data-aos="fade-up"
+        data-aos-delay="100">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-9 text-center">
+
             <p class="fs-5 lh-base">
-              I am a <strong>Junior Data Analyst &amp; Business Intelligence Developer</strong> dedicated to designing end-to-end data pipelines and interactive dashboards. By leveraging advanced data modeling, DAX logic, and deep Exploratory Data Analysis, I help stakeholders uncover revenue gaps, mitigate operational bottlenecks, and track key business metrics seamlessly.
+
+              I am a Junior Data Analyst interested in
+              transforming raw data into clear and useful
+              insights. I work with tools such as
+              <strong>Excel, Power BI, SQL, Power Query,
+              and DAX</strong> to clean, analyze, model,
+              and visualize data.
+
             </p>
-          </div>
-        </div>
-      </div>
-    </section><!-- /About Section -->
 
-    <!-- 3. Skills Section -->
+            <p class="fs-5 lh-base">
+
+              My focus is not only on creating dashboards,
+              but also on understanding the business problem,
+              identifying important patterns, and presenting
+              insights that can support better decisions.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
     <section id="skills" class="skills section">
-      <div class="container section-title" data-aos="fade-up">
+
+      <div class="container section-title"
+        data-aos="fade-up">
+
         <h2>Skills</h2>
-        <p>Core technical stack used to clean, model, and visualize data.</p>
+
+        <p>
+          Tools and technical skills I use throughout
+          the data analysis workflow.
+        </p>
+
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="container"
+        data-aos="fade-up"
+        data-aos-delay="100">
+
         <div class="row skills-content skills-animation">
+
           <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill"><span>Excel</span> <val>85%</val></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>Power BI</span> <val>90%</val></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>SQL</span> <val>80%</val></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill"><span>Power Query</span> <val>85%</val></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>Data Cleaning &amp; Transformation</span> <val>90%</val></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>DAX &amp; Data Modeling</span> <val>85%</val></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Skills Section -->
 
-    <!-- 4. Projects Section (Case Study Format with Detailed Business Logic) -->
-    <section id="portfolio" class="portfolio section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Projects ⭐</h2>
-        <p>Real-world Business Intelligence Case Studies: Problem breakdown, analytical approach, and client impact.</p>
-      </div>
+            <div class="progress">
 
-      <div class="container">
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All Dashboards</li>
-            <li data-filter=".filter-powerbi">Power BI Case Studies</li>
-          </ul>
+              <span class="skill">
+                <span>Excel</span>
+                <val>85%</val>
+              </span>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+              <div class="progress-bar-wrap">
 
-            <!-- Project Card Case Study -->
-            <div class="col-lg-12 portfolio-item isotope-item filter-powerbi">
-              <div class="portfolio-content h-100 p-4 bg-white shadow-sm">
-                <h3 class="text-primary fw-bold mb-3">Dashboard Case Study: Superstore Sales &amp; Profitability Intelligence</h3>
-                
-                <div class="row">
-                  <div class="col-lg-5">
-                    <img src="assets/img/project1.jpg.jpeg" class="img-fluid rounded mb-3" alt="Superstore Sales Dashboard">
-                    <a href="assets/img/project1.jpg.jpeg" title="Superstore Sales Dashboard" data-gallery="portfolio-gallery-book" class="glightbox btn btn-sm btn-outline-primary w-100 mb-2"><i class="bi bi-zoom-in"></i> View Dashboard Full Size</a>
-                    <a href="https://github.com/hossamahmed-data/portfolio" target="_blank" rel="noopener" class="btn btn-sm btn-dark w-100"><i class="bi bi-github"></i> View GitHub Repository</a>
-                  </div>
-                  
-                  <div class="col-lg-7">
-                    <div class="case-study-details">
-                      <h5>1. Executive Summary</h5>
-                      <p>An interactive BI reporting solution designed to help retail executives monitor sales performance, track regional profit leakages, and evaluate shipping efficiencies.</p>
-                      
-                      <h5>2. The Business Problem</h5>
-                      <p>The client's management team faced blind spots regarding loss-making product sub-categories. High gross sales volumes in certain regions were masking heavy discounting and negative profit margins.</p>
-                      
-                      <h5>3. Analytical Objective</h5>
-                      <p>Pinpoint primary drivers of profit erosion, analyze shipping mode performance across seasons, and provide clear visibility into top revenue-generating segments.</p>
-                      
-                      <h5>4. Data Preparation &amp; Cleaning</h5>
-                      <p>Processed over 9,994 transactional records using <strong>Power Query</strong>. Handled missing delivery dates, filtered out redundant log entries, and structured proper data types to ensure high-integrity temporal calculations.</p>
-                      
-                      <h5>5. Data Modeling &amp; DAX Implementation</h5>
-                      <p>Built a robust <strong>Star Schema architecture</strong> linking a Central Fact Table (Orders) with Dimension Tables (Customers, Products, Calendar, Geography). Authored custom <strong>DAX measures</strong> for Year-to-Date (YTD) sales, profit margins, and dynamic conditional formatting.</p>
-                      
-                      <h5>6. Dashboard Design &amp; User Experience</h5>
-                      <p>Developed a clean, executive-ready multi-page dashboard featuring synchronized slicers, drill-through capabilities, and intuitive KPI cards for instant decision-making.</p>
-
-                      <h5>7. Key Insights Uncovered</h5>
-                      <ul>
-                        <li>Sub-categories like Tables and Bookcases showed negative net profit margins despite high aggregate revenue.</li>
-                        <li>Standard Class shipping dominated over 60% of total volume, experiencing severe fulfillment bottlenecks during Q4 surges.</li>
-                      </ul>
-                      
-                      <h5>8. Client Solution &amp; Business Impact</h5>
-                      <p>Delivered actionable recommendations to phase out loss-making discount thresholds on specific items and re-route regional logistics, enabling the client to optimize inventory expenditure and protect profit margins.</p>
-                      
-                      <h5>9. Technical Stack</h5>
-                      <p><span class="badge bg-secondary">Power BI</span> <span class="badge bg-secondary">Power Query</span> <span class="badge bg-secondary">DAX</span> <span class="badge bg-secondary">Excel</span></p>
-                      
-                      <h5>10. My Scope of Work</h5>
-                      <p>Data Cleaning → Star Schema Modeling → DAX Engineering → Dashboard Development → Insights Delivery</p>
-                    </div>
-                  </div>
+                <div class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100">
                 </div>
 
               </div>
-            </div><!-- End Project Card -->
+
+            </div>
+
+
+            <div class="progress">
+
+              <span class="skill">
+                <span>Power BI</span>
+                <val>90%</val>
+              </span>
+
+              <div class="progress-bar-wrap">
+
+                <div class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="90"
+                  aria-valuemin="0"
+                  aria-valuemax="100">
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="progress">
+
+              <span class="skill">
+                <span>SQL</span>
+                <val>80%</val>
+              </span>
+
+              <div class="progress-bar-wrap">
+
+                <div class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100">
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
-        </div>
-      </div>
-    </section><!-- /Projects Section -->
 
-    <!-- 5. Certificates Section -->
-    <section id="resume" class="resume section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Certificates 🏆</h2>
-        <p>Professional credentials validating technical expertise.</p>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+
+              <span class="skill">
+                <span>Power Query</span>
+                <val>85%</val>
+              </span>
+
+              <div class="progress-bar-wrap">
+
+                <div class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100">
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="progress">
+
+              <span class="skill">
+                <span>Data Cleaning</span>
+                <val>85%</val>
+              </span>
+
+              <div class="progress-bar-wrap">
+
+                <div class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100">
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="progress">
+
+              <span class="skill">
+                <span>DAX & Data Modeling</span>
+                <val>80%</val>
+              </span>
+
+              <div class="progress-bar-wrap">
+
+                <div class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100">
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="portfolio"
+      class="portfolio section">
+
+      <div class="container section-title"
+        data-aos="fade-up">
+
+        <h2>Projects</h2>
+
+        <p>
+          Data analysis projects presented as complete
+          case studies — from the business problem
+          to insights and business impact.
+        </p>
+
+      </div>
+
 
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-            <div class="resume-item mb-4 p-4 bg-white shadow-sm rounded">
-              <h4 class="text-primary fw-bold">Data Fundamentals Digital Badge</h4>
-              <h5 class="text-muted">IBM SkillsBuild (via Credly)</h5>
-              <p><em>Issued August 2026 under the name Hossam Ahmed Shehata</em></p>
-              <p>Validated core competencies in the data analysis lifecycle, introductory analytics framework, and business problem-solving methodologies.</p>
-              <p class="mb-0"><a class="credential-link text-decoration-none fw-bold" href="https://www.credly.com/" target="_blank" rel="noopener"><i class="bi bi-patch-check"></i> Verify badge on Credly</a></p>
-            </div>
-            <div class="resume-item p-4 bg-white shadow-sm rounded">
-              <h4 class="text-primary fw-bold">Data Analysis Training Program</h4>
-              <h5 class="text-muted">Digital Egypt Pioneers Initiative (DEPI)</h5>
-              <p><em>Professional Track Training</em></p>
-              <p class="mb-0">Intensive hands-on training focusing on enterprise data cleaning, advanced relational modeling, Power BI dashboard design, and business intelligence reporting.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Certificates Section -->
 
-    <!-- 6. Contact Section -->
-    <section id="contact" class="contact section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Let's discuss how data intelligence can drive your next project forward.</p>
-      </div>
+        <!-- PROJECT 1 -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-6">
-            <div class="info-wrap p-4 bg-white shadow-sm rounded text-center">
-              <div class="info-item d-flex flex-column align-items-center mb-3">
-                <i class="bi bi-envelope fs-2 text-primary mb-1"></i>
-                <h3>Email</h3>
-                <p class="mb-0">hsam76215@gmail.com</p>
+        <div class="project-card mb-5"
+          data-aos="fade-up">
+
+          <div class="p-4">
+
+            <div class="project-header">
+
+              <h3>
+                Superstore Sales & Profitability Analysis
+              </h3>
+
+              <p>
+                Power BI Business Intelligence Dashboard
+              </p>
+
+              <div class="project-tags">
+
+                <span>Power BI</span>
+                <span>Power Query</span>
+                <span>DAX</span>
+                <span>Excel</span>
+
               </div>
-              <div class="info-item d-flex flex-column align-items-center mb-3">
-                <i class="bi bi-linkedin fs-2 text-primary mb-1"></i>
-                <h3>LinkedIn</h3>
-                <p class="mb-0"><a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7" target="_blank" class="text-decoration-none">hosam-ahmed-6849103a7</a></p>
-              </div>
-              <div class="info-item d-flex flex-column align-items-center">
-                <i class="bi bi-github fs-2 text-primary mb-1"></i>
-                <h3>GitHub</h3>
-                <p class="mb-0"><a href="https://github.com/hossamahmed-data" target="_blank" class="text-decoration-none">hossamahmed-data</a></p>
-              </div>
+
             </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Contact Section -->
 
-  </main>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+            <div class="row gy-4">
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+              <!-- DASHBOARD -->
 
-</body>
-</html>
+              <div class="col-lg-5">
+
+                <img
+                  src="assets/img/project1.jpg.jpeg"
+                  class="img-fluid project-image"
+                  alt="Superstore Sales and Profitability Dashboard">
+
+                <div class="mt-3">
+
+                  <a
+                    href="assets/img/project1.jpg.jpeg"
+                    title="Superstore Sales Dashboard"
+                    data-gallery="portfolio-gallery"
+                    class="glightbox btn btn-outline-primary w-100 mb-2">
+
+                    <i class="bi bi-zoom-in"></i>
+                    View Dashboard
+
+                  </a>
+
+                  <a
+                    href="https://github.com/hossamahmed-data/portfolio"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-dark w-100">
+
+                    <i class="bi bi-github"></i>
+                    View GitHub
+
+                  </a>
+
+                </div>
+
+              </div>
+
+
+              <!-- CASE STUDY -->
+
+              <div class="col-lg-7">
+
+                <div class="case-study">
+
+
+                  <!-- 01 -->
+
+                  <h4>
+                    01. Project Overview
+                  </h4>
+
+                  <p>
+
+                    An interactive sales and profitability
+                    dashboard designed to analyze business
+                    performance across products, regions,
+                    customers, and shipping categories.
+
+                  </p>
+
+
+                  <!-- 02 -->
+
+                  <h4>
+                    02. Business Problem
+                  </h4>
+
+                  <p>
+
+                    The business needed a clearer view of
+                    sales performance and profitability.
+                    Management needed to identify areas
+                    generating strong sales but weak or
+                    negative profit.
+
+                  </p>
+
+
+                  <!-- 03 -->
+
+                  <h4>
+                    03. Analytical Objective
+                  </h4>
+
+                  <p>
+
+                    The main objective was to understand
+                    sales and profit trends, identify
+                    underperforming products and regions,
+                    and discover the main factors affecting
+                    profitability.
+
+                  </p>
+
+
+                  <!-- 04 -->
+
+                  <h4>
+                    04. Dataset
+                  </h4>
+
+                  <ul>
+
+                    <li>
+                      Transaction-level sales data
+                    </li>
+
+                    <li>
+                      Product and category information
+                    </li>
+
+                    <li>
+                      Customer and geographic information
+                    </li>
+
+                    <li>
+                      Sales, quantity, discount, and profit
+                    </li>
+
+                  </ul>
+
+
+                  <!-- 05 -->
+
+                  <h4>
+                    05. Data Cleaning & Preparation
+                  </h4>
+
+                  <p>
+
+                    The dataset was prepared using
+                    <strong>Power Query</strong>.
+                    The process included checking data types,
+                    handling missing values, removing
+                    unnecessary records, and preparing
+                    the data for analysis.
+
+                  </p>
+
+
+                  <!-- 06 -->
+
+                  <h4>
+                    06. Data Modeling & Analysis
+                  </h4>
+
+                  <p>
+
+                    The data was organized into a structured
+                    analytical model and relationships were
+                    created between the main tables.
+
+                    DAX measures were then used to calculate
+                    important KPIs and business metrics.
+
+                  </p>
+
+
+                  <!-- 07 -->
+
+                  <h4>
+                    07. Dashboard
+                  </h4>
+
+                  <p>
+
+                    The dashboard provides an interactive view
+                    of sales, profit, products, regions,
+                    and other important business dimensions.
+
+                  </p>
+
+
+                  <!-- 08 -->
+
+                  <h4>
+                    08. Key Insights
+                  </h4>
+
+                  <ul>
+
+                    <li>
+                      Identified products and categories
+                      with weaker profitability.
+                    </li>
+
+                    <li>
+                      Compared sales and profit performance
+                      across regions.
+                    </li>
+
+                    <li>
+                      Analyzed the relationship between
+                      discounts and profitability.
+                    </li>
+
+                    <li>
+                      Identified important sales trends
+                      and performance patterns.
+                    </li>
+
+                  </ul>
+
+
+                  <!-- 09 -->
+
+                  <h4>
+                    09. Business Solution / Impact
+                  </h4>
+
+                  <div class="impact-box">
+
+                    <p class="mb-0">
+
+                      The analysis helps management identify
+                      profitability issues, monitor sales
+                      performance, and focus on products,
+                      regions, and business areas that require
+                      further attention.
+
+                    </p>
+
+                  </div>
+
+
+                  <!-- 10 -->
+
+                  <h4>
+                    10. Tools Used
+                  </h4>
+
+                  <div class="project-tags">
+
+                    <span>Power BI</span
