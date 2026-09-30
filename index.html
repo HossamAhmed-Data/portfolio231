@@ -8,7 +8,7 @@
   <style>
     *{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
     html{ scroll-behavior: smooth; }
-    body{ background:#0b0f19; color:#f3f4f6; line-height:1.6; }
+    body{ background:#0b0f19; color:#f3f4f6; line-height:1.6; overflow-x: hidden; }
     .container{ width:min(1100px, 90%); margin:auto; }
     
     /* Header / Sidebar */
@@ -28,21 +28,26 @@
     .navmenu a{ display:block; color:#9ca3af; text-decoration:none; padding:9px 14px; border-radius:8px; transition:0.3s; font-size:13px; }
     .navmenu a:hover, .navmenu a.active{ background:#1f2937; color:#38bdf8; transform: translateX(5px); }
 
-    /* Main Content & Scroll Animation Classes */
+    /* Main Content & Scroll Animations */
     main{ margin-left:260px; padding:50px; }
-    section{ padding:60px 0; border-bottom:1px solid #1f2937; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    section{ padding:60px 0; border-bottom:1px solid #1f2937; opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease-out, transform 0.9s ease-out; }
     section.visible { opacity: 1; transform: translateY(0); }
     
     h2.section-title{ font-size:32px; color:#fff; margin-bottom:15px; }
     p.section-desc{ color:#9ca3af; margin-bottom:40px; }
 
-    /* Hero */
-    .hero{ min-height:85vh; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; border-radius:16px; padding:40px; margin-bottom:30px; }
-    .hero-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.25; z-index:1; }
-    .hero-overlay{ position:absolute; inset:0; background:linear-gradient(90deg, #0b0f19 20%, rgba(11,15,25,0.75)); z-index:2; }
+    /* Fixed Hero Background & Image Alignment */
+    .hero{ min-height:85vh; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; border-radius:16px; padding:50px; margin-bottom:30px; }
+    .hero-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit: cover; object-position: center right; opacity:0.35; z-index:1; }
+    .hero-overlay{ position:absolute; inset:0; background:linear-gradient(90deg, #0b0f19 15%, rgba(11,15,25,0.7) 60%, rgba(11,15,25,0.3)); z-index:2; }
     .hero .container{ position:relative; z-index:3; }
-    .hero h2{ font-size:48px; color:#fff; margin-bottom:10px; }
-    .hero p{ font-size:20px; color:#38bdf8; font-weight:600; }
+    .hero h2{ font-size:48px; color:#fff; margin-bottom:10px; animation: slideInLeft 1s ease; }
+    .hero p{ font-size:20px; color:#38bdf8; font-weight:600; animation: slideInLeft 1.2s ease; }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
 
     /* Stats */
     .stats-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; }
@@ -51,18 +56,18 @@
     .stat-box h3{ font-size:36px; color:#38bdf8; margin-bottom:5px; }
     .stat-box p{ color:#9ca3af; font-size:13px; }
 
-    /* Skills Section */
+    /* Skills Section with Animated Bars */
     .skills-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
     .skill-card{ background:#111827; padding:20px; border-radius:12px; border:1px solid #1f2937; transition: transform 0.3s; }
     .skill-card:hover{ transform: translateY(-3px); }
     .skill-header{ display:flex; justify-content:space-between; margin-bottom:8px; color:#fff; font-size:14px; font-weight:600; }
     .skill-bar{ width:100%; height:8px; background:#1f2937; border-radius:4px; overflow:hidden; }
-    .skill-progress{ height:100%; background:#38bdf8; border-radius:4px; width:0; transition: width 1.5s ease-in-out; }
+    .skill-progress{ height:100%; background:#38bdf8; border-radius:4px; width:0; transition: width 1.5s cubic-bezier(0.1, 0.9, 0.2, 1); }
 
     /* Portfolio */
     .portfolio-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:25px; }
     .portfolio-item{ background:#111827; border-radius:12px; overflow:hidden; border:1px solid #1f2937; transition: transform 0.3s, box-shadow 0.3s; }
-    .portfolio-item:hover{ transform: translateY(-8px); box-shadow: 0 10px 25px rgba(56, 189, 248, 0.1); }
+    .portfolio-item:hover{ transform: translateY(-8px); box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15); }
     .portfolio-item img{ width:100%; height:180px; object-fit:cover; display:block; cursor:pointer; transition: transform 0.5s; }
     .portfolio-item img:hover{ transform: scale(1.05); }
     .portfolio-info{ padding:20px; }
@@ -128,7 +133,7 @@
   </header>
 
   <main>
-    <!-- Hero with Background Image -->
+    <!-- Hero with Fixed Background Image & Overlay -->
     <section id="hero" class="hero visible">
       <img class="hero-bg" src="assets/img/hero-bg.jpeg.jpeg" alt="Hero Background">
       <div class="hero-overlay"></div>
@@ -147,7 +152,7 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section with Animated Progress Bars -->
     <section id="skills">
       <div class="container">
         <h2 class="section-title">Technical Skills</h2>
@@ -156,42 +161,42 @@
         <div class="skills-grid">
           <div class="skill-card">
             <div class="skill-header"><span>Power BI & DAX</span><span>95%</span></div>
-            <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
           </div>
           <div class="skill-card">
             <div class="skill-header"><span>Excel & Power Query</span><span>90%</span></div>
-            <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
           </div>
           <div class="skill-card">
             <div class="skill-header"><span>SQL & Database Management</span><span>85%</span></div>
-            <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
           </div>
           <div class="skill-card">
             <div class="skill-header"><span>Data Modeling & Star Schema</span><span>85%</span></div>
-            <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Stats -->
+    <!-- Stats with Animated Numbers Counter -->
     <section id="stats">
       <div class="container">
         <div class="stats-grid">
           <div class="stat-box">
-            <h3>3</h3>
+            <h3 class="counter" data-target="3">0</h3>
             <p>Data Projects</p>
           </div>
           <div class="stat-box">
-            <h3>5</h3>
+            <h3 class="counter" data-target="5">0</h3>
             <p>Certifications</p>
           </div>
           <div class="stat-box">
-            <h3>180</h3>
+            <h3 class="counter" data-target="180">0</h3>
             <p>Training Hours</p>
           </div>
           <div class="stat-box">
-            <h3>5</h3>
+            <h3 class="counter" data-target="5">0</h3>
             <p>Core Technologies</p>
           </div>
         </div>
@@ -302,11 +307,37 @@
       }
     }
 
-    // Scroll Fade-In Animation Observer
-    const observer = new IntersectionObserver((entries) => {
+    // Scroll Animations & Triggers for Counters and Skill Bars
+    const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
           entry.target.classList.add('visible');
+          
+          // Trigger Number Counters
+          if(entry.target.id === 'stats') {
+            document.querySelectorAll('.counter').forEach(counter => {
+              const target = +counter.getAttribute('data-target');
+              let count = 0;
+              const speed = target / 30;
+              const updateCount = () => {
+                count += speed;
+                if(count < target) {
+                  counter.innerText = Math.ceil(count);
+                  setTimeout(updateCount, 40);
+                } else {
+                  counter.innerText = target;
+                }
+              };
+              updateCount();
+            });
+          }
+
+          // Trigger Skill Progress Bars Animation
+          if(entry.target.id === 'skills') {
+            document.querySelectorAll('.skill-progress').forEach(bar => {
+              bar.style.width = bar.getAttribute('data-width');
+            });
+          }
         }
       });
     }, { threshold: 0.15 });
