@@ -17,12 +17,21 @@
     .container{ width:min(1150px,92%); margin:auto; }
 
     /* ================= ANIMATIONS ================= */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .fade-in {
-      animation: fadeIn 0.8s ease forwards;
+    .animate-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ================= HEADER ================= */
@@ -52,7 +61,7 @@
     .hero{ min-height:100vh; display:flex; align-items:center; position:relative; overflow:hidden; background:#101827; color:white; }
     .hero-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.28; }
     .hero-overlay{ position:absolute; inset:0; background:linear-gradient(90deg,#101827 20%,rgba(16,24,39,.75),rgba(16,24,39,.45)); }
-    .hero-content{ position:relative; z-index:2; max-width:750px; animation: fadeIn 1s ease; }
+    .hero-content{ position:relative; z-index:2; max-width:750px; }
     .hero-small{ color:#16b6c4; font-weight:700; font-size:14px; letter-spacing:2px; text-transform:uppercase; }
     .hero h2{ font-family:"Poppins",sans-serif; font-size:55px; line-height:1.15; margin:14px 0; color:white; }
     .hero h2 span{ color:#16b6c4; }
@@ -85,8 +94,8 @@
     .skill-card p{ color:#738094; font-size:14px; }
 
     /* ================= PROJECTS ================= */
-    .project{ background:white; border-radius:16px; overflow:hidden; box-shadow:0 10px 35px rgba(20,30,50,.08); border:1px solid #e2e8f0; margin-bottom:45px; transition: transform 0.3s; }
-    .project:hover{ box-shadow: 0 15px 45px rgba(20,30,50,.12); }
+    .project{ background:white; border-radius:16px; overflow:hidden; box-shadow:0 10px 35px rgba(20,30,50,.08); border:1px solid #e2e8f0; margin-bottom:45px; transition: transform 0.3s, box-shadow 0.3s; }
+    .project:hover{ transform: translateY(-3px); box-shadow: 0 15px 45px rgba(20,30,50,.12); }
     .project-top{ padding:30px 32px 20px; border-bottom:1px solid #edf0f4; }
     .project-top h3{ font-family:"Poppins",sans-serif; font-size:25px; margin-bottom:7px; color:#101827; }
     .project-top p{ color:#6e7889; }
@@ -192,11 +201,11 @@
 
   <main>
     <!-- ================= HOME ================= -->
-    <section id="home" class="hero">
+    <section id="home" class="hero visible">
       <img class="hero-bg" src="assets/img/hero-bg.jpeg.jpeg" alt="">
       <div class="hero-overlay"></div>
       <div class="container">
-        <div class="hero-content">
+        <div class="hero-content animate-up">
           <div class="hero-small">Data Analysis & Business Intelligence</div>
           <h2>Hi, I'm <span>Hossam Ahmed</span></h2>
           <h3>Junior Data Analyst</h3>
@@ -328,7 +337,4 @@
                 <h4>05. Data Cleaning & Preparation</h4>
                 <p>The dataset was cleaned and prepared using Power Query. The process included checking data types, handling missing values, removing unnecessary records, and preparing the data for analysis.</p>
                 <h4>06. Data Modeling & Analysis</h4>
-                <p>The data was organized into a structured analytical model. Relationships were created between relevant tables and DAX measures were used to calculate important business metrics.</p>
-                <h4>07. Dashboard</h4>
-                <p>The dashboard provides an interactive overview of sales, profit, products, regions, and other important business dimensions.</p>
-                <h4>0
+                <p>The data was organized into a structured analytical model. Relationships were created between relevant
