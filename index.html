@@ -1,885 +1,1123 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hossam Ahmed | Junior Data Analyst</title>
+<title>Hossam Ahmed | Junior Data Analyst</title>
 
-  <meta name="description"
-    content="Portfolio of Hossam Ahmed, Junior Data Analyst specializing in Excel, Power BI, SQL, Power Query, DAX, data cleaning, analysis, and dashboard development.">
+<meta name="description" content="Hossam Ahmed - Junior Data Analyst Portfolio. Data Analysis, Power BI, Excel, SQL, Data Cleaning and Business Intelligence.">
 
-  <meta name="keywords"
-    content="Hossam Ahmed, Data Analyst, Junior Data Analyst, Power BI, Excel, SQL, Power Query, DAX, Data Analysis">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<style>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+html{
+    scroll-behavior:smooth;
+}
 
-  <!-- Vendor CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+body{
+    font-family:"Inter",sans-serif;
+    background:#f7f9fc;
+    color:#172033;
+    line-height:1.7;
+}
 
-  <!-- Main CSS -->
-  <link href="assets/css/main.css" rel="stylesheet">
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-  <style>
+img{
+    max-width:100%;
+    display:block;
+}
 
-    html {
-      scroll-behavior: smooth;
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    position:fixed;
+    left:0;
+    top:0;
+    width:260px;
+    height:100vh;
+    background:#101827;
+    color:white;
+    padding:35px 22px;
+    z-index:1000;
+    overflow-y:auto;
+}
+
+.profile{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.profile img{
+    width:115px;
+    height:115px;
+    object-fit:cover;
+    border-radius:50%;
+    margin:0 auto 15px;
+    border:4px solid rgba(255,255,255,.12);
+}
+
+.profile h1{
+    font-family:"Poppins",sans-serif;
+    font-size:22px;
+    margin-bottom:4px;
+}
+
+.profile p{
+    color:#9da8b8;
+    font-size:13px;
+}
+
+.social{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:18px;
+}
+
+.social a{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#1b2638;
+    font-size:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.social a:hover{
+    background:#16a6b6;
+    transform:translateY(-3px);
+}
+
+.nav{
+    margin-top:35px;
+}
+
+.nav a{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding:13px 14px;
+    margin-bottom:6px;
+    border-radius:8px;
+    color:#b9c2d0;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav a:hover,
+.nav a.active{
+    background:#172438;
+    color:white;
+}
+
+.nav-icon{
+    width:22px;
+    text-align:center;
+}
+
+/* ================= MAIN ================= */
+
+main{
+    margin-left:260px;
+}
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title span{
+    color:#16a6b6;
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    font-family:"Poppins",sans-serif;
+    font-size:34px;
+    margin:8px 0 12px;
+}
+
+.section-title p{
+    max-width:700px;
+    margin:auto;
+    color:#687386;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:#101827;
+    color:white;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.28;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,#101827 20%,rgba(16,24,39,.75),rgba(16,24,39,.45));
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:750px;
+}
+
+.hero-small{
+    color:#16b6c4;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.hero h2{
+    font-family:"Poppins",sans-serif;
+    font-size:55px;
+    line-height:1.15;
+    margin:14px 0;
+}
+
+.hero h2 span{
+    color:#16b6c4;
+}
+
+.hero h3{
+    font-size:24px;
+    font-weight:500;
+    color:#d6dce5;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#b8c1cf;
+    max-width:650px;
+    font-size:17px;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 21px;
+    border-radius:7px;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#16a6b6;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#118b99;
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:1px solid #607084;
+    color:white;
+}
+
+.btn-outline:hover{
+    border-color:#16a6b6;
+    color:#16a6b6;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:45px;
+    align-items:center;
+}
+
+.about-card{
+    background:white;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 8px 30px rgba(20,30,50,.07);
+}
+
+.about-card h3{
+    font-family:"Poppins",sans-serif;
+    margin-bottom:15px;
+}
+
+.about-card p{
+    color:#687386;
+}
+
+.info-list{
+    margin-top:20px;
+}
+
+.info-item{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid #edf0f4;
+    font-size:14px;
+}
+
+.info-item strong{
+    color:#172033;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.skill-card{
+    background:white;
+    padding:27px;
+    border-radius:12px;
+    box-shadow:0 7px 25px rgba(20,30,50,.06);
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-5px);
+}
+
+.skill-icon{
+    width:45px;
+    height:45px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eaf8fa;
+    color:#1294a2;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.skill-card h3{
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.skill-card p{
+    color:#738094;
+    font-size:14px;
+}
+
+/* ================= PROJECTS ================= */
+
+.project{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 35px rgba(20,30,50,.08);
+    margin-bottom:45px;
+}
+
+.project-top{
+    padding:30px 32px 20px;
+    border-bottom:1px solid #edf0f4;
+}
+
+.project-top h3{
+    font-family:"Poppins",sans-serif;
+    font-size:25px;
+    margin-bottom:7px;
+}
+
+.project-top p{
+    color:#6e7889;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:15px;
+}
+
+.tag{
+    background:#eaf8fa;
+    color:#128d9b;
+    border-radius:20px;
+    padding:5px 11px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.project-body{
+    padding:30px;
+}
+
+.project-layout{
+    display:grid;
+    grid-template-columns:45% 55%;
+    gap:35px;
+}
+
+.dashboard{
+    position:sticky;
+    top:30px;
+}
+
+.dashboard img{
+    width:100%;
+    border-radius:10px;
+    border:1px solid #e6eaf0;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dashboard img:hover{
+    transform:scale(1.015);
+}
+
+.dashboard-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:12px;
+}
+
+.dashboard-buttons a{
+    flex:1;
+}
+
+.case-study h4{
+    font-size:16px;
+    color:#1193a2;
+    margin-bottom:7px;
+    margin-top:23px;
+}
+
+.case-study h4:first-child{
+    margin-top:0;
+}
+
+.case-study p{
+    color:#5f6979;
+    font-size:14px;
+}
+
+.case-study ul{
+    padding-left:20px;
+    color:#5f6979;
+    font-size:14px;
+}
+
+.case-study li{
+    margin-bottom:6px;
+}
+
+.impact{
+    background:#f0fafb;
+    border-left:4px solid #16a6b6;
+    padding:17px 19px;
+    border-radius:7px;
+    margin-top:8px;
+}
+
+.impact p{
+    margin:0;
+}
+
+.process{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:10px;
+}
+
+.process span{
+    background:#f1f3f6;
+    padding:6px 10px;
+    border-radius:5px;
+    font-size:12px;
+    color:#4e5969;
+}
+
+/* ================= CERTIFICATES ================= */
+
+.certificates{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.certificate{
+    background:white;
+    padding:28px;
+    border-radius:12px;
+    box-shadow:0 7px 25px rgba(20,30,50,.06);
+}
+
+.certificate h3{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.certificate .issuer{
+    color:#16a0af;
+    font-weight:600;
+    font-size:14px;
+}
+
+.certificate p{
+    color:#6b7585;
+    font-size:14px;
+    margin-top:12px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box{
+    max-width:750px;
+    margin:auto;
+    background:#101827;
+    color:white;
+    border-radius:15px;
+    padding:45px;
+    text-align:center;
+}
+
+.contact-box h2{
+    font-family:"Poppins",sans-serif;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.contact-box p{
+    color:#aeb8c7;
+    margin-bottom:25px;
+}
+
+.contact-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-left:260px;
+    background:#0d1420;
+    color:#8e99aa;
+    text-align:center;
+    padding:25px;
+    font-size:13px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+.mobile-menu{
+    display:none;
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:2000;
+    width:45px;
+    height:45px;
+    border:0;
+    border-radius:8px;
+    background:#101827;
+    color:white;
+    font-size:20px;
+}
+
+@media(max-width:1000px){
+
+    .header{
+        transform:translateX(-100%);
+        transition:.3s;
     }
 
-    @keyframes softRise {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .header.open{
+        transform:translateX(0);
     }
 
-    .hero .container h2 {
-      animation: softRise .9s ease-out .15s both;
+    .mobile-menu{
+        display:block;
     }
 
-    .hero .container p {
-      animation: softRise .9s ease-out .35s both;
+    main,
+    footer{
+        margin-left:0;
     }
 
-    .header .profile-img img {
-      transition: transform .4s ease, box-shadow .4s ease;
+    .hero h2{
+        font-size:43px;
     }
 
-    .header .profile-img img:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 0 4px rgba(255, 255, 255, .15);
+    .about-grid,
+    .project-layout{
+        grid-template-columns:1fr;
     }
 
-    .header .social-links a {
-      transition: transform .25s ease, background-color .25s ease;
+    .dashboard{
+        position:static;
     }
 
-    .header .social-links a:hover {
-      transform: translateY(-3px);
+    .skills-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .btn {
-      transition: all .25s ease;
+    .certificates{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:70px 0;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
+    .hero{
+        min-height:90vh;
     }
 
-    /* Project Card */
-
-    .project-card {
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
-      transition: transform .3s ease, box-shadow .3s ease;
+    .hero h2{
+        font-size:35px;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
+    .hero h3{
+        font-size:19px;
     }
 
-    .project-image {
-      width: 100%;
-      border-radius: 8px;
-      transition: transform .5s ease;
+    .hero p{
+        font-size:15px;
     }
 
-    .project-image:hover {
-      transform: scale(1.02);
+    .section-title h2{
+        font-size:28px;
     }
 
-    /* Case Study */
-
-    .case-study {
-      padding: 25px;
+    .skills-grid{
+        grid-template-columns:1fr;
     }
 
-    .case-study h4 {
-      color: #14919b;
-      font-weight: 700;
-      margin-top: 25px;
-      margin-bottom: 10px;
+    .project-top,
+    .project-body{
+        padding:22px;
     }
 
-    .case-study h4:first-child {
-      margin-top: 0;
+    .project-top h3{
+        font-size:21px;
     }
 
-    .case-study p {
-      line-height: 1.7;
-      color: #555;
+    .dashboard-buttons{
+        flex-direction:column;
     }
 
-    .case-study ul {
-      padding-left: 20px;
+    .contact-box{
+        padding:30px 20px;
     }
 
-    .case-study li {
-      margin-bottom: 8px;
-      color: #555;
-    }
+}
 
-    .project-tags span {
-      display: inline-block;
-      background: #eef7f8;
-      color: #14919b;
-      padding: 6px 12px;
-      border-radius: 20px;
-      margin: 4px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .project-header {
-      margin-bottom: 25px;
-    }
-
-    .project-header h3 {
-      font-weight: 700;
-    }
-
-    .project-header p {
-      color: #666;
-    }
-
-    .impact-box {
-      background: #f4fafa;
-      border-left: 4px solid #14919b;
-      padding: 18px;
-      border-radius: 6px;
-      margin-top: 10px;
-    }
-
-    .workflow {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .workflow span {
-      background: #f1f1f1;
-      padding: 7px 12px;
-      border-radius: 5px;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    .section-title p {
-      max-width: 750px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-    }
-
-  </style>
-
+</style>
 </head>
 
-<body class="index-page">
 
-  <!-- ================= HEADER ================= -->
+<body>
 
-  <header id="header" class="header dark-background d-flex flex-column">
+<!-- ================= MOBILE BUTTON ================= -->
 
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+<button class="mobile-menu" onclick="toggleMenu()">☰</button>
 
-    <div class="profile-img">
-      <img src="assets/img/hossam.jpg.jpeg"
-        alt="Hossam Ahmed"
-        class="img-fluid rounded-circle">
-    </div>
 
-    <a href="#hero"
-      class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">Hossam Ahmed</h1>
-    </a>
+<!-- ================= SIDE NAVIGATION ================= -->
 
-    <div class="social-links text-center">
+<header class="header" id="header">
 
-      <a href="https://github.com/hossamahmed-data"
-        target="_blank"
-        rel="noopener"
-        title="GitHub">
-        <i class="bi bi-github"></i>
-      </a>
+    <div class="profile">
 
-      <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7"
-        target="_blank"
-        rel="noopener"
-        title="LinkedIn">
-        <i class="bi bi-linkedin"></i>
-      </a>
+        <img src="assets/img/hossam.jpg.jpeg"
+             alt="Hossam Ahmed">
 
-      <a href="https://wa.me/201099371851"
-        target="_blank"
-        rel="noopener"
-        title="WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-      </a>
+        <h1>Hossam Ahmed</h1>
+
+        <p>Junior Data Analyst</p>
+
+        <div class="social">
+
+            <a href="https://github.com/hossamahmed-data"
+               target="_blank">
+                GH
+            </a>
+
+            <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7"
+               target="_blank">
+                IN
+            </a>
+
+            <a href="https://wa.me/201099371851"
+               target="_blank">
+                WA
+            </a>
+
+        </div>
 
     </div>
 
-    <!-- NAVIGATION -->
 
-    <nav id="navmenu" class="navmenu">
+    <nav class="nav">
 
-      <ul>
-
-        <li>
-          <a href="#hero" class="active">
-            <i class="bi bi-house navicon"></i>
+        <a href="#home" class="active">
+            <span class="nav-icon">⌂</span>
             Home
-          </a>
-        </li>
+        </a>
 
-        <li>
-          <a href="#about">
-            <i class="bi bi-person navicon"></i>
+        <a href="#about">
+            <span class="nav-icon">👤</span>
             About Me
-          </a>
-        </li>
+        </a>
 
-        <li>
-          <a href="#skills">
-            <i class="bi bi-bar-chart-steps navicon"></i>
+        <a href="#skills">
+            <span class="nav-icon">▦</span>
             Skills
-          </a>
-        </li>
+        </a>
 
-        <li>
-          <a href="#portfolio">
-            <i class="bi bi-kanban navicon"></i>
+        <a href="#projects">
+            <span class="nav-icon">▣</span>
             Projects
-          </a>
-        </li>
+        </a>
 
-        <li>
-          <a href="#certificates">
-            <i class="bi bi-award navicon"></i>
+        <a href="#certificates">
+            <span class="nav-icon">◆</span>
             Certificates
-          </a>
-        </li>
+        </a>
 
-        <li>
-          <a href="#contact">
-            <i class="bi bi-envelope navicon"></i>
+        <a href="#contact">
+            <span class="nav-icon">✉</span>
             Contact
-          </a>
-        </li>
-
-      </ul>
+        </a>
 
     </nav>
 
-  </header>
+</header>
 
 
-  <main class="main">
-
-    <!-- ================= HOME ================= -->
-
-    <section id="hero"
-      class="hero section dark-background">
-
-      <img src="assets/img/hero-bg.jpeg.jpeg"
-        alt=""
-        data-aos="fade-in">
-
-      <div class="container"
-        data-aos="fade-in"
-        data-aos-delay="100">
-
-        <h2>Hossam Ahmed Shehata</h2>
-
-        <p>
-          I'm a
-          <span class="typed"
-            data-typed-items="Junior Data Analyst, Data Analyst, Power BI Developer">
-            Junior Data Analyst
-          </span>
-          <span class="typed-cursor typed-cursor--blink"></span>
-        </p>
-
-        <p class="mt-2"
-          style="font-size:1.05rem; opacity:.9;">
-
-          Turning raw data into meaningful insights,
-          interactive dashboards, and clear business decisions.
-
-        </p>
-
-        <div class="social-links mt-4">
-
-          <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7"
-            target="_blank"
-            class="btn btn-outline-light btn-sm px-3 py-2 m-1">
-
-            <i class="bi bi-linkedin"></i>
-            LinkedIn
-
-          </a>
-
-          <a href="https://github.com/hossamahmed-data"
-            target="_blank"
-            class="btn btn-outline-light btn-sm px-3 py-2 m-1">
-
-            <i class="bi bi-github"></i>
-            GitHub
-
-          </a>
-
-          <a href="#portfolio"
-            class="btn btn-primary btn-sm px-3 py-2 m-1"
-            style="background-color:#14919b;border:none;">
-
-            <i class="bi bi-kanban"></i>
-            View Projects
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
+<main>
 
 
-    <!-- ================= ABOUT ================= -->
+<!-- ================= HOME ================= -->
 
-    <section id="about" class="about section">
+<section id="home" class="hero">
 
-      <div class="container section-title"
-        data-aos="fade-up">
+    <img class="hero-bg"
+         src="assets/img/hero-bg.jpeg.jpeg"
+         alt="">
 
-        <h2>About Me</h2>
+    <div class="hero-overlay"></div>
 
-        <p>
-          A short introduction about my background
-          and approach to data analysis.
-        </p>
+    <div class="container">
 
-      </div>
+        <div class="hero-content">
 
-      <div class="container"
-        data-aos="fade-up"
-        data-aos-delay="100">
+            <div class="hero-small">
+                Data Analysis & Business Intelligence
+            </div>
 
-        <div class="row justify-content-center">
+            <h2>
+                Hi, I'm <span>Hossam Ahmed</span>
+            </h2>
 
-          <div class="col-lg-9 text-center">
+            <h3>
+                Junior Data Analyst
+            </h3>
 
-            <p class="fs-5 lh-base">
+            <p>
 
-              I am a Junior Data Analyst interested in
-              transforming raw data into clear and useful
-              insights. I work with tools such as
-              <strong>Excel, Power BI, SQL, Power Query,
-              and DAX</strong> to clean, analyze, model,
-              and visualize data.
+                I transform raw data into meaningful insights
+                through data cleaning, analysis, visualization,
+                and interactive dashboards.
 
             </p>
 
-            <p class="fs-5 lh-base">
+            <div class="hero-buttons">
 
-              My focus is not only on creating dashboards,
-              but also on understanding the business problem,
-              identifying important patterns, and presenting
-              insights that can support better decisions.
+                <a href="#projects"
+                   class="btn btn-primary">
+                    View My Projects
+                </a>
+
+                <a href="https://www.linkedin.com/in/hosam-ahmed-6849103a7"
+                   target="_blank"
+                   class="btn btn-outline">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/hossamahmed-data"
+                   target="_blank"
+                   class="btn btn-outline">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>About Me</span>
+
+            <h2>Turning Data Into Insights</h2>
+
+            <p>
+                A simple introduction to my background,
+                skills, and approach to data analysis.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>Who I Am</h3>
+
+                <p>
+
+                    I am a Junior Data Analyst interested in
+                    using data to understand business problems,
+                    discover patterns, and support better
+                    decision-making.
+
+                </p>
+
+                <div class="info-list">
+
+                    <div class="info-item">
+                        <span>Role</span>
+                        <strong>Junior Data Analyst</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Focus</span>
+                        <strong>Data Analysis & BI</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Location</span>
+                        <strong>Egypt</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>My Approach</h3>
+
+                <p>
+
+                    My approach starts with understanding the
+                    business problem before working with the data.
+                    I clean and transform the dataset, analyze
+                    important patterns, build clear visualizations,
+                    and communicate the insights in a simple way.
+
+                </p>
+
+                <p>
+
+                    My goal is not only to create dashboards,
+                    but to explain what the data means and
+                    how the insights can support business decisions.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>My Skills</span>
+
+            <h2>Tools & Technical Skills</h2>
+
+            <p>
+                Technologies I use to clean, analyze,
+                model, and visualize data.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">EX</div>
+
+                <h3>Excel</h3>
+
+                <p>
+                    Data cleaning, formulas, analysis,
+                    pivot tables, and reporting.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">BI</div>
+
+                <h3>Power BI</h3>
+
+                <p>
+                    Interactive dashboards, KPIs,
+                    reports, and data visualization.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">SQL</div>
+
+                <h3>SQL</h3>
+
+                <p>
+                    Querying, filtering, aggregations,
+                    joins, and data analysis.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">PQ</div>
+
+                <h3>Power Query</h3>
+
+                <p>
+                    Data cleaning, transformation,
+                    and preparation.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">DX</div>
+
+                <h3>DAX</h3>
+
+                <p>
+                    Measures, calculated columns,
+                    KPIs, and analytical calculations.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">DA</div>
+
+                <h3>Data Analysis</h3>
+
+                <p>
+                    Exploratory analysis, insights,
+                    visualization, and business questions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Featured Work</span>
+
+            <h2>Projects & Case Studies</h2>
+
+            <p>
+
+                Each project explains the complete analytical
+                process — from the business problem to the
+                final insights and business impact.
 
             </p>
 
-          </div>
-
         </div>
 
-      </div>
 
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills" class="skills section">
-
-      <div class="container section-title"
-        data-aos="fade-up">
-
-        <h2>Skills</h2>
-
-        <p>
-          Tools and technical skills I use throughout
-          the data analysis workflow.
-        </p>
-
-      </div>
-
-
-      <div class="container"
-        data-aos="fade-up"
-        data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-
-              <span class="skill">
-                <span>Excel</span>
-                <val>85%</val>
-              </span>
-
-              <div class="progress-bar-wrap">
-
-                <div class="progress-bar"
-                  role="progressbar"
-                  aria-valuenow="85"
-                  aria-valuemin="0"
-                  aria-valuemax="100">
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div class="progress">
-
-              <span class="skill">
-                <span>Power BI</span>
-                <val>90%</val>
-              </span>
-
-              <div class="progress-bar-wrap">
-
-                <div class="progress-bar"
-                  role="progressbar"
-                  aria-valuenow="90"
-                  aria-valuemin="0"
-                  aria-valuemax="100">
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div class="progress">
-
-              <span class="skill">
-                <span>SQL</span>
-                <val>80%</val>
-              </span>
-
-              <div class="progress-bar-wrap">
-
-                <div class="progress-bar"
-                  role="progressbar"
-                  aria-valuenow="80"
-                  aria-valuemin="0"
-                  aria-valuemax="100">
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-
-              <span class="skill">
-                <span>Power Query</span>
-                <val>85%</val>
-              </span>
-
-              <div class="progress-bar-wrap">
-
-                <div class="progress-bar"
-                  role="progressbar"
-                  aria-valuenow="85"
-                  aria-valuemin="0"
-                  aria-valuemax="100">
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div class="progress">
-
-              <span class="skill">
-                <span>Data Cleaning</span>
-                <val>85%</val>
-              </span>
-
-              <div class="progress-bar-wrap">
-
-                <div class="progress-bar"
-                  role="progressbar"
-                  aria-valuenow="85"
-                  aria-valuemin="0"
-                  aria-valuemax="100">
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div class="progress">
-
-              <span class="skill">
-                <span>DAX & Data Modeling</span>
-                <val>80%</val>
-              </span>
-
-              <div class="progress-bar-wrap">
-
-                <div class="progress-bar"
-                  role="progressbar"
-                  aria-valuenow="80"
-                  aria-valuemin="0"
-                  aria-valuemax="100">
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section id="portfolio"
-      class="portfolio section">
-
-      <div class="container section-title"
-        data-aos="fade-up">
-
-        <h2>Projects</h2>
-
-        <p>
-          Data analysis projects presented as complete
-          case studies — from the business problem
-          to insights and business impact.
-        </p>
-
-      </div>
-
-
-      <div class="container">
-
+        <!-- ================================================= -->
         <!-- PROJECT 1 -->
+        <!-- ================================================= -->
 
-        <div class="project-card mb-5"
-          data-aos="fade-up">
+        <div class="project">
 
-          <div class="p-4">
+            <div class="project-top">
 
-            <div class="project-header">
+                <h3>
+                    Superstore Sales & Profitability Analysis
+                </h3>
 
-              <h3>
-                Superstore Sales & Profitability Analysis
-              </h3>
+                <p>
+                    Power BI Dashboard & Business Intelligence Case Study
+                </p>
 
-              <p>
-                Power BI Business Intelligence Dashboard
-              </p>
+                <div class="tags">
 
-              <div class="project-tags">
+                    <span class="tag">Power BI</span>
+                    <span class="tag">Power Query</span>
+                    <span class="tag">DAX</span>
+                    <span class="tag">Excel</span>
+                    <span class="tag">Data Analysis</span>
 
-                <span>Power BI</span>
-                <span>Power Query</span>
-                <span>DAX</span>
-                <span>Excel</span>
-
-              </div>
+                </div>
 
             </div>
 
 
-            <div class="row gy-4">
+            <div class="project-body">
 
-              <!-- DASHBOARD -->
+                <div class="project-layout">
 
-              <div class="col-lg-5">
 
-                <img
-                  src="assets/img/project1.jpg.jpeg"
-                  class="img-fluid project-image"
-                  alt="Superstore Sales and Profitability Dashboard">
+                    <!-- DASHBOARD -->
 
-                <div class="mt-3">
+                    <div class="dashboard">
 
-                  <a
-                    href="assets/img/project1.jpg.jpeg"
-                    title="Superstore Sales Dashboard"
-                    data-gallery="portfolio-gallery"
-                    class="glightbox btn btn-outline-primary w-100 mb-2">
+                        <img src="assets/img/project1.jpg.jpeg"
+                             alt="Superstore Sales Dashboard"
+                             onclick="openImage(this.src)">
 
-                    <i class="bi bi-zoom-in"></i>
-                    View Dashboard
+                        <div class="dashboard-buttons">
 
-                  </a>
+                            <a href="assets/img/project1.jpg.jpeg"
+                               target="_blank"
+                               class="btn btn-primary">
 
-                  <a
-                    href="https://github.com/hossamahmed-data/portfolio"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn btn-dark w-100">
+                                View Dashboard
 
-                    <i class="bi bi-github"></i>
-                    View GitHub
+                            </a>
 
-                  </a>
+                            <a href="https://github.com/hossamahmed-data/portfolio"
+                               target="_blank"
+                               class="btn btn-outline"
+                               style="color:#172033;border-color:#d8dee8;">
 
-                </div>
+                                GitHub
 
-              </div>
+                            </a>
 
+                        </div>
 
-              <!-- CASE STUDY -->
+                    </div>
 
-              <div class="col-lg-7">
 
-                <div class="case-study">
+                    <!-- CASE STUDY -->
 
+                    <div class="case-study">
 
-                  <!-- 01 -->
 
-                  <h4>
-                    01. Project Overview
-                  </h4>
+                        <h4>
+                            01. Project Overview
+                        </h4>
 
-                  <p>
+                        <p>
 
-                    An interactive sales and profitability
-                    dashboard designed to analyze business
-                    performance across products, regions,
-                    customers, and shipping categories.
-
-                  </p>
-
-
-                  <!-- 02 -->
-
-                  <h4>
-                    02. Business Problem
-                  </h4>
-
-                  <p>
-
-                    The business needed a clearer view of
-                    sales performance and profitability.
-                    Management needed to identify areas
-                    generating strong sales but weak or
-                    negative profit.
-
-                  </p>
-
-
-                  <!-- 03 -->
-
-                  <h4>
-                    03. Analytical Objective
-                  </h4>
-
-                  <p>
-
-                    The main objective was to understand
-                    sales and profit trends, identify
-                    underperforming products and regions,
-                    and discover the main factors affecting
-                    profitability.
-
-                  </p>
-
-
-                  <!-- 04 -->
-
-                  <h4>
-                    04. Dataset
-                  </h4>
-
-                  <ul>
-
-                    <li>
-                      Transaction-level sales data
-                    </li>
-
-                    <li>
-                      Product and category information
-                    </li>
-
-                    <li>
-                      Customer and geographic information
-                    </li>
-
-                    <li>
-                      Sales, quantity, discount, and profit
-                    </li>
-
-                  </ul>
-
-
-                  <!-- 05 -->
-
-                  <h4>
-                    05. Data Cleaning & Preparation
-                  </h4>
-
-                  <p>
-
-                    The dataset was prepared using
-                    <strong>Power Query</strong>.
-                    The process included checking data types,
-                    handling missing values, removing
-                    unnecessary records, and preparing
-                    the data for analysis.
-
-                  </p>
-
-
-                  <!-- 06 -->
-
-                  <h4>
-                    06. Data Modeling & Analysis
-                  </h4>
-
-                  <p>
-
-                    The data was organized into a structured
-                    analytical model and relationships were
-                    created between the main tables.
-
-                    DAX measures were then used to calculate
-                    important KPIs and business metrics.
-
-                  </p>
-
-
-                  <!-- 07 -->
-
-                  <h4>
-                    07. Dashboard
-                  </h4>
-
-                  <p>
-
-                    The dashboard provides an interactive view
-                    of sales, profit, products, regions,
-                    and other important business dimensions.
-
-                  </p>
-
-
-                  <!-- 08 -->
-
-                  <h4>
-                    08. Key Insights
-                  </h4>
-
-                  <ul>
-
-                    <li>
-                      Identified products and categories
-                      with weaker profitability.
-                    </li>
-
-                    <li>
-                      Compared sales and profit performance
-                      across regions.
-                    </li>
-
-                    <li>
-                      Analyzed the relationship between
-                      discounts and profitability.
-                    </li>
-
-                    <li>
-                      Identified important sales trends
-                      and performance patterns.
-                    </li>
-
-                  </ul>
-
-
-                  <!-- 09 -->
-
-                  <h4>
-                    09. Business Solution / Impact
-                  </h4>
-
-                  <div class="impact-box">
-
-                    <p class="mb-0">
-
-                      The analysis helps management identify
-                      profitability issues, monitor sales
-                      performance, and focus on products,
-                      regions, and business areas that require
-                      further attention.
-
-                    </p>
-
-                  </div>
-
-
-                  <!-- 10 -->
-
-                  <h4>
-                    10. Tools Used
-                  </h4>
-
-                  <div class="project-tags">
-
-                    <span>Power BI</span
+                            An interactive sale
